@@ -1,8 +1,14 @@
-Explique, fale a complexidade e implemente o algoritmo DFS.
+#include<bits/stdc++.h>
+#define x first
+#define y second
+#define rep(i,b,c) for(int i = (int)b;i<(int)c;i++)
+using namespace std;
+typedef pair<int,int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
 
-Explicação:
-O algoritmo de busca em profundidade, atravessa um grafo, a cada braço criado vai até o final do grafo(até achar um nó que foi visitado ou não haver mais nós) e faz o caminho de volta.
-Complexidade: O(V+E)
+vector<vii> graph;
+vi visited;
 
 rep(i,0,n){
     if(!visited[n])  DFS(n);
