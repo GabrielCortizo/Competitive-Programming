@@ -1,25 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-string str;
+const int ms = 109;
+int vet[ms];
+map<int,int> mapa;
 int main(){
-	int a=0,b=0,c=0,d=0;
-	int s = 0;
-	cin >> str;
-	a = str.find('[');
-	b = str.rfind(']');
-	c = str.find(':',a);
-	d = str.rfind(':',b);
-	bool f = ( a<0 || b<0 || c<0 || d<0);
-	
-	f |= (a>b || c>=d);
-	if(f){
-		cout<<-1;
-	} else{
-		for(int i = c+1;i<d;i++) if(str[i]=='|') s++;
-		s+=4;
-		cout<<s<<"\n";
-	
+	int n,t;
+	int a;
+	cin >> n >>t;
+	for(int i = 0;i<t;i++){
+		cin >>a;
+		mapa[a]++;
+		if(mapa.size() == n) {
+			cout<<1;
+			for(int i = 1;i<=n;i++){
+				int sz = mapa[i]--;
+				if(sz == 1) mapa.erase(i);
+			}
+		}
+		else cout<<0;
 	}
+
 
 }
